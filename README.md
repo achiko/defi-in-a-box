@@ -90,7 +90,7 @@ Contributions are welcome. To add a new project:
 
 - add a new submodule, referencing the Git repo for the project's smart contracts
 - using `defi_in_a_box/uniswap.py` as an example, add a `<project>.py` file containing functions required to deploy the project's contracts and set the desired development state
-- call these functions in `defi_in_a_box/uniswap.py`'s `main()`
+- call these functions in `defi_in_a_box/main.py`'s `main()`
 - update the output file to include any relevant contract addresses
 
 
