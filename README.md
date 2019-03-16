@@ -1,6 +1,6 @@
 # DeFi in a Box
 
-One day, @Alexintosh [had a dream](https://twitter.com/Alexintosh/status/1106200673509625856). He dreamed of a world where a #buidler could use all of the latest and greatest #DeFi protocols on the locally or on the same testnet, without having to test code on main net with real funds.
+One day, @Alexintosh [had a dream](https://twitter.com/Alexintosh/status/1106200673509625856). He dreamed of a world where a #buidler could use all of the latest and greatest #DeFi protocols locally or on the same testnet, without having to test code on main net with real funds.
 
 Many people shared this dream, so here is a repository containing the first draft of Defi in a Box - a self-contained project which will (hopefully) simplify the process of experimenting with DeFi protocols in a testing environment.
 
