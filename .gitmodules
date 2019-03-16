@@ -1,0 +1,6 @@
+[submodule "uniswap-frontend"]
+	path = uniswap-frontend
+	url = https://github.com/Uniswap/uniswap-frontend.git
+[submodule "uniswap-contracts-vyper"]
+	path = uniswap-contracts-vyper
+	url = https://github.com/Uniswap/contracts-vyper.git

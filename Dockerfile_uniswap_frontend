@@ -1,0 +1,9 @@
+FROM node:8
+WORKDIR /usr/src/app
+COPY uniswap-frontend/package*.json ./
+RUN yarn
+COPY uniswap-frontend/public .
+COPY uniswap-frontend/src .
+
+CMD [ "yarn", "start" ]
+EXPOSE 8080

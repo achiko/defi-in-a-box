@@ -1,0 +1,35 @@
+version: "3"
+services:
+  ganache:
+    image: trufflesuite/ganache-cli
+    ports:
+      - 8545:8545
+    command: ganache-cli --db /data -m "candy maple cake sugar pudding cream honey rich smooth crumble sweet treat" -i 123456789
+    volumes:
+      - ./ganache:/data/
+  deploy:
+    build:
+      dockerfile: Dockerfile_deploy
+      context: .
+    volumes:
+      - .:/app
+    links:
+      - ganache
+    environment:
+      WEB3_PROVIDER_URI: http://ganache:8545
+  app:
+    build:
+      dockerfile: Dockerfile_uniswap_frontend
+      context: .
+    volumes:
+      - ./uniswap-frontend/public:/usr/src/app/public
+      - ./uniswap-frontend/src:/usr/src/app/src
+      - ./uniswap-addresses.js:/usr/src/app/src/ducks/addresses.js
+    environment:
+      NODE_ENV: development
+      REACT_APP_NETWORK_ID: 123456789
+      REACT_APP_NETWORK: Ganache
+    ports:
+      - 3000:3000
+    depends_on:
+      - ganache
