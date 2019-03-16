@@ -17,7 +17,7 @@ services:
       - ganache
     environment:
       WEB3_PROVIDER_URI: http://ganache:8545
-  app:
+  uniswap-frontend:
     build:
       dockerfile: Dockerfile_uniswap_frontend
       context: .

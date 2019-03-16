@@ -7,8 +7,8 @@ Many people shared this dream, so here is a repository containing the first draf
 ## Included Apps and Protocols
 
 - [x] Ganache
-- [x] Uniswap front-end
 - [x] Uniswap exchanges
+- [ ] Uniswap front-end
 - [ ] Kyber Network
 - [ ] 0x
 - [ ] Compound Finance
@@ -78,9 +78,20 @@ Three test ERC20 tokens are created. The token uses OpenZeppelin's [Mintable](ht
 
 Exhanges are created for each of the test tokens. The main account (`web3.eth.accounts[0]`) creates a liquidity pool for each token using the `exchange_rate` and `initial_liquidity` parameters defined in `defi_in_a_box/config.py`.
 
-Note: The front-end is not yet working correctly. Test tokens are displayed but can not be swapped.
-
 Test tokens are added to the front-end by generating a custom version of `uniswap-frontend/src/ducks/addresses.js` containing the correct exchange/token addresses.
+
+Live-reload is enabled and the local working directory is mounted into the `uniswap-frontend` container, so changes to the front-end's JS files should be immediately reflected in your browser.
+
+Note: The front-end is not yet working correctly (`Maximum update depth exceeded`).
+
+# Contributing
+
+Contributions are welcome. To add a new project:
+
+- add a new submodule, referencing the Git repo for the project's smart contracts
+- using `defi_in_a_box/uniswap.py` as an example, add a `<project>.py` file containing functions required to deploy the project's contracts and set the desired development state
+- call these functions in `defi_in_a_box/uniswap.py`'s `main()`
+- update the output file to include any relevant contract addresses
 
 
 # Alternatives
